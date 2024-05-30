@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px; /* Reduced font size */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: #0d1117;
+    color: #c9d1d9;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+label {
+    color: #c9d1d9;
+    flex-basis: 150px; /* Fixed width for labels */
+}
+
+input[type="range"] {
+    flex-grow: 1;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 5px;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    font-size: 12px; /* Reduced font size */
+}
+
+input[type="text"]::placeholder, input[type="number"]::placeholder {
+    color: #8b949e;
+}
+
+#productList {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
+    list-style-type: none;
+    border: 1px solid #30363d;
+    box-sizing: border-box;
+    background-color: #0d1117;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #30363d;
+    cursor: pointer;
+    position: relative;
+    color: #c9d1d9;
+}
+
+li:hover {
+    background-color: #161b22;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    padding: 10px;
+    z-index: 1000;
+    color: #c9d1d9;
+}
+
+li:hover .tooltip {
+    display: block;
+}
+
+/* Custom scrollbar styling */
+#productList::-webkit-scrollbar {
+    width: 12px;
+}
+
+#productList::-webkit-scrollbar-track {
+    background: #161b22;
+}
+
+#productList::-webkit-scrollbar-thumb {
+    background-color: #30363d;
+    border-radius: 6px;
+    border: 3px solid #161b22;
+}

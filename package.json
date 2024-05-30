@@ -1,0 +1,15 @@
+{
+  "name": "bazflipperjs",
+  "version": "0.1.0",
+  "description": "GUI tool to track BZ profit margins",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "JaegyuDev",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "electron": "^30.0.9",
+    "electron-builder": "^24.13.3"
+  }
+}
