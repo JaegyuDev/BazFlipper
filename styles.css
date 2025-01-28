@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    font-size: 14px; /* Reduced font size */
+    font-size: 14px;
+    /* Reduced font size */
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -29,22 +30,26 @@ body {
 
 label {
     color: #c9d1d9;
-    flex-basis: 150px; /* Fixed width for labels */
+    flex-basis: 150px;
+    /* Fixed width for labels */
 }
 
 input[type="range"] {
     flex-grow: 1;
 }
 
-input[type="text"], input[type="number"] {
+input[type="text"],
+input[type="number"] {
     padding: 5px;
     background-color: #161b22;
     border: 1px solid #30363d;
     color: #c9d1d9;
-    font-size: 12px; /* Reduced font size */
+    font-size: 12px;
+    /* Reduced font size */
 }
 
-input[type="text"]::placeholder, input[type="number"]::placeholder {
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
     color: #8b949e;
 }
 
@@ -66,6 +71,7 @@ li {
     cursor: pointer;
     position: relative;
     color: #c9d1d9;
+    overflow-wrap: break-word;
 }
 
 li:hover {
@@ -99,4 +105,57 @@ li:hover .tooltip {
     background-color: #30363d;
     border-radius: 6px;
     border: 3px solid #161b22;
+}
+
+/* Style for manual refresh button */
+#refreshButton {
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#refreshButton:hover {
+    background-color: #0056b3;
+}
+
+#searchBox {
+    padding: 5px;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    font-size: 12px;
+}
+
+label {
+    color: #c9d1d9;
+    flex-basis: 150px;
+    position: relative;
+}
+
+label::after {
+    content: attr(data-description);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #161b22;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    padding: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+    margin-top: 5px;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+label:hover::after {
+    opacity: 1;
+    transition-delay: 0.5s;
 }
