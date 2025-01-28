@@ -4,10 +4,15 @@
 outputDir="./build/"
 iconPath="./assets/icons"
 appName="BazFlipper"
+buildVersion="0.2.0"
 
-# cleanup - might use taskfiles for these things instead
-rm -rf $outputDir
+if [ -d "/path/to/directory" ]; then
+    rm -rf $outputDir
+else
 
 # build
-electron-packager . "$appName" --platform=win32 --arch=x64 --out="$outputDir" --icon="$iconPath/icon.ico"
-electron-packager . "$appName" --platform=linux --arch=x64 --out="$outputDir" --icon="$iconPath/icon.png"
+electron-packager . "$appName" --build-version="$buildVersion" --platform=win32 \
+    --arch=x64 --out="$outputDir" --icon="$iconPath/icon.ico"
+
+electron-packager . "$appName" --build-version="$buildVersion" --platform=linux \
+    --arch=x64 --out="$outputDir" --icon="$iconPath/icon.png"
