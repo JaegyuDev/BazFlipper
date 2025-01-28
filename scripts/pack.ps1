@@ -3,6 +3,8 @@ $outputDir = "./build/"
 $iconPath = "./assets/icons"
 $appName = "BazFlipper"
 
+Remove-Item -LiteralPath $outputDir -Force -Recurse
+
 # Package for Windows
 electron-packager . $appName --platform=win32 --arch=x64 --out=$outputDir --icon=$iconPath/icon.ico
 

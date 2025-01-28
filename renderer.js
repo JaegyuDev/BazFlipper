@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     sellVolume,
                 };
             })
-            .filter(product => 
+            .filter(product =>
                 product.buyPrice >= buyPrice &&
                 product.sellPrice > 0 &&
                 product.marginPercentage >= margin &&
@@ -102,4 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     updateListView();
+
+    setInterval(updateListView, 15000);
 });

@@ -1,12 +1,13 @@
 #!/bin/bash
 
-# Define variables
+# build vars
 outputDir="./build/"
 iconPath="./assets/icons"
 appName="BazFlipper"
 
-# Package for Windows
-electron-packager . "$appName" --platform=win32 --arch=x64 --out="$outputDir" --icon="$iconPath/icon.ico"
+# cleanup - might use taskfiles for these things instead
+rm -rf $outputDir
 
-# Package for Linux
+# build
+electron-packager . "$appName" --platform=win32 --arch=x64 --out="$outputDir" --icon="$iconPath/icon.ico"
 electron-packager . "$appName" --platform=linux --arch=x64 --out="$outputDir" --icon="$iconPath/icon.png"
